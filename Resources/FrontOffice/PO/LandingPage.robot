@@ -1,7 +1,7 @@
 *** Settings ***
 Library    AppiumLibrary
-Library    DataDriver    ../../Data/Excel/Login_Register.xlxs    sheet_name=Register
-
+Library    DataDriver    ..\\Data\\Excel\\Login_Register.xlxs    sheet_name=Register
+Resource    ../../Common/DataManager.robot
 *** Variables ***
 ${CHAT21_APPLICATION_ID}                        chat21.android.demo  
 ${landing_signUp_btn}                           id=${CHAT21_APPLICATION_ID}:id/signup
@@ -14,6 +14,10 @@ ${landing_main_home_tab}                       //android.widget.TextView[@text="
 ${landing_main_profile_tab}                    //android.widget.TextView[@text="PROFILE"]
 ${landing_logout_btn}                          id=${CHAT21_APPLICATION_ID}:id/logout
 ${landing_logIn_btn}                           id=${CHAT21_APPLICATION_ID}:id/login
+
+
+#*** Sheet Name Excel ***
+${sheet_name_invalid}                            Login_Invalid
 
 
 
@@ -63,3 +67,15 @@ Click Login Button
 Wait Page Contains Element
     Wait Until Page Contains Element            ${landing_logIn_btn}
 
+
+Input Multiple Email Invalid
+    ${row}=    Read Number of Rows    ${sheet_name_invalid}
+    FOR  ${i}  IN RANGE  1  ${row}+1
+        ${email}=    Read Excel Data of Cell    ${sheet_name_invalid}    ${i}    1
+        ${password}=    Read Excel Data of Cell    ${sheet_name_invalid}    ${i}    2
+        Input Email    ${email}
+        Input Password    ${password}
+        Click Login Button
+        Sleep    3s
+    END
+    

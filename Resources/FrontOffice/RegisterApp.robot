@@ -1,5 +1,5 @@
 *** Settings ***
-Library    DataDriver    ../../Data/Excel/Login_Register.xlxs    sheet_name=Register
+Library    DataDriver    ..\\Data\\Excel\\Login_Register.xlxs    sheet_name=Register
 Resource    ./PO/LandingPage.robot
 Resource    ./PO/HomePage.robot
 
@@ -19,7 +19,11 @@ Register with valid account
     LandingPage.Input Password    ${password}
     LandingPage.Input Confirm Password    ${confirmPassword}
     LandingPage.Click Signup Button
+    
+Verify Register Login Successful
     LandingPage.Verify Register is successful
+
+Log out
     LandingPage.Logout User
 
 

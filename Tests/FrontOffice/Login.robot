@@ -16,7 +16,7 @@ Verify login with Invalid
     [Documentation]    This is test 1
     [Tags]    Login invalid
     [Arguments]    ${email}    ${password}
-    LoginApp.Input data login    ${email}    ${password}
+    LoginApp.Input multiple data invalid    ${email}    ${password}
     LoginApp.Verify login is unsuccessful
 
 

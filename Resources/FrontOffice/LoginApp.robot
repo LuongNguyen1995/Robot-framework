@@ -22,3 +22,6 @@ Verify login is unsuccessful
 
 Verify login is successful
     HomePage.Wait Main Page Loaded
+
+Input multiple data invalid
+    LandingPage.Input Multiple Email Invalid
