@@ -2,7 +2,7 @@
 # Configuration
 ${APPIUM_SERVER}        http://localhost:4723/wd/hub
 ${PLATFORM_NAME}        Android
-${DEVICE_NAME}          emulator-5554
+${DEVICE_NAME}          405c390a
 ${APP_PACKAGE}          chat21.android.demo
 ${APP_ACTIVITY}         chat21.android.demo.SplashActivity
 ${AUTOMATION_NAME}      Uiautomator2
