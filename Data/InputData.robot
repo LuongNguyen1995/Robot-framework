@@ -1,11 +1,16 @@
 *** Variables ***
 # Configuration
-${BROWSER} =  chrome
-${ENVIROMENT} =  prod
-&{BASE_URL} =  dev=https://dev.cars.com  qa=https://qa.cars.com  prod=https://prod.cars.com
-${LOGIN_URL} =  profile/secure/login
+${APPIUM_SERVER}        http://localhost:4723/wd/hub
+${PLATFORM_NAME}        Android
+${DEVICE_NAME}          emulator-5554
+${APP_PACKAGE}          chat21.android.demo
+${APP_ACTIVITY}         chat21.android.demo.SplashActivity
+${AUTOMATION_NAME}      Uiautomator2
 
-# Input Data
-&{UNREGISTERED_USER}  Email=admin@robotframeworktutorial.com  Password=TestPassword!  ExpectedErrorMessage=You haven't signed up yet. Try a different email address or
-&{INVALID_PASSWORD_USER}  Email=bryan@bryanlamb.com  Password=TestPassword!  ExpectedErrorMessage=Please double check your password. It should be 6 or more characters with no spaces. If you don't remember it, you can
-&{BLANK_CREDENTIALS_USER}  Email=#BLANK  Password=#BLANK  ExpectedErrorMessage=Please enter your email address and password.
+#*** Android 10 variables ***
+${ANDROID10_CONTINUE_BUTTON}    id=com.android.permissioncontroller:id/continue_button
+${ANDROID10_OK_BUTTON}          //android.widget.Button[@text="OK"]
+
+${CHAT21_APPLICATION_ID}                    chat21.android.demo  
+${form_login_emailAddress_txt}              id=${CHAT21_APPLICATION_ID}:id/email
+
