@@ -1,8 +1,9 @@
 *** Settings ***
-Library    DataDriver    ..\\Data\\Excel\\Login_Register.xlxs    sheet_name=Register
+#Library    DataDriver    ..\\Data\\Excel\\Login_Register.xlxs    sheet_name=Register
 Resource    ./PO/LandingPage.robot
 Resource    ./PO/HomePage.robot
-
+Resource    ../../Data/Excel/Login_Register.xlxs
+Library    DataDriver    ../../../Data/Excel/Login_Register.xlxs    sheet_name=Register
 
 
 *** Variables ***

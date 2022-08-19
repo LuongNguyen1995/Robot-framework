@@ -15,14 +15,14 @@ Begin App Test
     ...    appPackage=${APP_PACKAGE}
     ...    appActivity=${APP_ACTIVITY}
     ...    automationName=${AUTOMATION_NAME}
-    #${ALERT}        Run Keyword And Return Status   Page Should Not Contain Element   ${ANDROID10_CONTINUE_BUTTON}
-    #Run Keyword If      '${ALERT}' == 'False'       ByPass Alerts
-    #Wait Until Page Contains Element            ${form_login_emailAddress_txt}
+    ${ALERT}        Run Keyword And Return Status       Page Should Not Contain Element       ${ANDROID10_CONTINUE_BUTTON}
+    Run Keyword If      '${ALERT}' == 'False'       ByPass Alerts
+    Wait Until Page Contains Element            ${form_login_emailAddress_txt}
 
 ByPass Alerts
     Wait Until Page Contains Element        ${ANDROID10_CONTINUE_BUTTON} 
     Click Element                           ${ANDROID10_CONTINUE_BUTTON}
-    Sleep   15s 
+    Sleep   3s 
     Wait Until Page Contains Element        ${ANDROID10_OK_BUTTON}
     Click Element                           ${ANDROID10_OK_BUTTON}
 
