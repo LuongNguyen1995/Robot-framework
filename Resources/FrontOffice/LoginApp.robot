@@ -3,9 +3,6 @@ Library    DataDriver    ../../Data/Excel/Login_Register.xlxs    sheet_name=Logi
 Resource    ./PO/LandingPage.robot
 Resource    ./PO/HomePage.robot
 
-
-
-
 *** Variables ***
 
 
@@ -18,10 +15,15 @@ Input data login
     LandingPage.Click Login Button
 
 Verify login is unsuccessful
-    LandingPage.Wait Page Contains Element
+    LandingPage.Wait Main Page Not Loaded
 
 Verify login is successful
     HomePage.Wait Main Page Loaded
 
 Input multiple data invalid
     LandingPage.Input Multiple Email Invalid
+
+Test Multiples Login Scenarios
+    [Arguments]    ${email}    ${password}
+    Input data login    ${email}    ${password}
+    Verify login is unsuccessful

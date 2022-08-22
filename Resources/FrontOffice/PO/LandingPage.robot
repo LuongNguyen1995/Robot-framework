@@ -14,7 +14,7 @@ ${landing_main_home_tab}                       //android.widget.TextView[@text="
 ${landing_main_profile_tab}                    //android.widget.TextView[@text="PROFILE"]
 ${landing_logout_btn}                          id=${CHAT21_APPLICATION_ID}:id/logout
 ${landing_logIn_btn}                           id=${CHAT21_APPLICATION_ID}:id/login
-
+${main_home_tab}                               //android.widget.TextView[@text="HOME"]
 
 #*** Sheet Name Excel ***
 ${sheet_name_invalid}                            Login_Invalid
@@ -66,6 +66,10 @@ Click Login Button
 
 Wait Page Contains Element
     Wait Until Page Contains Element            ${landing_logIn_btn}
+
+
+Wait Main Page Not Loaded
+    Wait Until Page Does Not Contain Element     ${main_home_tab}  
 
 
 Input Multiple Email Invalid
