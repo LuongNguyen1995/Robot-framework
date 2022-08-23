@@ -15,6 +15,7 @@ ${landing_main_profile_tab}                    //android.widget.TextView[@text="
 ${landing_logout_btn}                          id=${CHAT21_APPLICATION_ID}:id/logout
 ${landing_logIn_btn}                           id=${CHAT21_APPLICATION_ID}:id/login
 ${main_home_tab}                               //android.widget.TextView[@text="HOME"]
+${error_msg_text}                              id=${CHAT21_APPLICATION_ID}:id/error_msg
 
 #*** Sheet Name Excel ***
 ${sheet_name_invalid}                            Login_Invalid
@@ -82,4 +83,9 @@ Input Multiple Email Invalid
         Click Login Button
         Sleep    3s
     END
+
+Page Contains Element Error
+    [Arguments]         ${error_msg}
+    Wait Until Element Is Visible    ${error_msg_text}
+    Element Should Contain Text    ${error_msg_text}    ${error_msg}
     

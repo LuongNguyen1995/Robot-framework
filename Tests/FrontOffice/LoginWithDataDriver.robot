@@ -3,30 +3,20 @@ Documentation    Check Login app will multiple value
 Resource  ../../Resources/FrontOffice/LoginApp.robot
 Resource  ../../Resources/Common/CommonApp.robot
 Resource  ../../Resources/Common/DataManager.robot
-Library            DataDriver    Login_Register.xlxs    sheet_name=Login_Invalid
+Library            DataDriver    ../../Data/Excel/Login_Register.xlxs    sheet_name=Login_Invalid
 Test Setup    Begin App Test
 Test Teardown    End App Test
+Test Template    Invalid login scenario
 
 # robot -d results/FrontOffice Tests/FrontOffice/Login.robot
 
 
 *** Keywords ***
-Read All The Data
-
-
-
+Invalid login scenario
+    [Arguments]    ${email}    ${password}    ${error_msg}
+    LoginApp.Input data login    ${email}    ${password}
+    LoginApp.Verify Element Should Contain  ${error_msg}
 
 *** Test Cases ***
 
-Invalid login scenarios should not display correct error messages
-
-    @{UNREGISTERED_USER}
-    @{INVALID_PASSWORD_USER}
-    @{BLANK_CREDENTIALS_USER}    
-
-
-Verify login Successful
-    [Documentation]    Login with Valid Data
-    [Tags]    Login valid
-    LoginApp.Input data login    ${LOGIN}[email]    ${LOGIN}[password]
-    LoginApp.Verify login is successful
+Verify Login Fails with invalid creds    ${email}    ${password}    ${error_msg}

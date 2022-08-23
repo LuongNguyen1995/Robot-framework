@@ -13,7 +13,7 @@ Test Teardown    End App Test
 
 Invalid login scenarios should not display correct error messages
     [Template]  Test Multiples Login Scenarios
-    [Tags]    Login invalid0
+    [Tags]    Login invalid
     @{UNREGISTERED_USER}
     @{INVALID_PASSWORD_USER}
     @{BLANK_CREDENTIALS_USER}    

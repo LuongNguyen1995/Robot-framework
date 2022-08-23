@@ -23,6 +23,9 @@ Verify login is successful
 Input multiple data invalid
     LandingPage.Input Multiple Email Invalid
 
+Verify Element Should Contain 
+    LandingPage.Page Contains Element Error
+
 Test Multiples Login Scenarios
     [Arguments]    ${email}    ${password}
     Input data login    ${email}    ${password}
