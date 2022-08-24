@@ -31,22 +31,27 @@ Click on Signup link
 
 Input Email
     [Arguments]         ${email}
+    Clear Text        ${landing_emailAddress_field}
     Input Text        ${landing_emailAddress_field}    ${email}
 
 Input Firstname
     [Arguments]         ${firstName}
+    Clear Text        ${landing_register_firstName_txt}
     Input Text        ${landing_register_firstName_txt}    ${firstName}
 
 Input Lastname
     [Arguments]         ${lastName}   
+    Clear Text          ${landing_register_lastName_txt} 
     Input Text          ${landing_register_lastName_txt}              ${lastName}
 
 Input Password
     [Arguments]         ${password}   
+    Clear Text          ${landing_password_filed}  
     Input Text          ${landing_password_filed}              ${password}    
 
 Input Confirm Password
     [Arguments]         ${confirmPassword}   
+    Clear Text          ${landing_register_confirmPassword_txt}
     Input Text          ${landing_register_confirmPassword_txt}              ${confirmPassword} 
     
 Click Signup Button

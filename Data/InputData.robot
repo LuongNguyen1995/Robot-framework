@@ -2,6 +2,7 @@
 Resource  ../Resources/Common/DataManager.robot
 Library    ../CustomLibs/Csv.py
 Library    String
+Variables    ../CustomLibs/DynamicVariable.py
 
 *** Variables ***
 # Configuration
@@ -11,8 +12,7 @@ ${DEVICE_NAME}          emulator-5554
 ${APP_PACKAGE}          chat21.android.demo
 ${APP_ACTIVITY}         chat21.android.demo.SplashActivity
 ${AUTOMATION_NAME}      Uiautomator2
-
-${fakeNumber}           Evaluate    random.sample()
+s
 
 #*** Android 10 variables ***
 ${ANDROID10_CONTINUE_BUTTON}    id=com.android.permissioncontroller:id/continue_button
@@ -32,7 +32,7 @@ ${password_blank}=    Read Excel Data of Cell  Login_Invalid  4  2
 
 #*** Register Info ***
 
-&{REGISTER}    email=Luong{}@gmail.com    firstName=Luong    lastName=Nguyen    password=123123    confirmPassword=123123
+&{REGISTER}    email=${emailDynamic}    firstName=Luong    lastName=Nguyen    password=123123    confirmPassword=123123
 
 #*** Login Info ***
 &{LOGIN}    email=Luong123@gmail.com    password=123456

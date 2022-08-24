@@ -27,6 +27,6 @@ Verify Element Should Contain
     LandingPage.Page Contains Element Error
 
 Test Multiples Login Scenarios
-    [Arguments]    ${email}    ${password}
+    [Arguments]    ${email}    ${password}   
     Input data login    ${email}    ${password}
     Verify login is unsuccessful
