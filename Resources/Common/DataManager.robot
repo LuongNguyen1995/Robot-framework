@@ -24,9 +24,5 @@ Read Number of Cols
     ${maxc}=    Max Number Of Cols    ${sheetname}
     [Return]    ${maxc}
 
-Random Number In Range
-    #[Arguments]    ${max_value}
-    ${rand}=    Random Number     1000
-    [Return]    ${rand}
 
     

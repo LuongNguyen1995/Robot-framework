@@ -28,5 +28,7 @@ Verify Element Should Contain
 
 Test Multiples Login Scenarios
     [Arguments]    ${email}    ${password}   
-    Input data login    ${email}    ${password}
+    LandingPage.Input Email    ${email}
+    LandingPage.Input Password    ${password}
+    LandingPage.Click Login Button
     Verify login is unsuccessful
