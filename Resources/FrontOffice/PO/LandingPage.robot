@@ -1,6 +1,5 @@
 *** Settings ***
 Library    AppiumLibrary
-#Library    DataDriver    ..\\Data\\Excel\\Login_Register.xlxs    sheet_name=Register
 Resource    ../../Common/DataManager.robot
 *** Variables ***
 ${CHAT21_APPLICATION_ID}                        chat21.android.demo  

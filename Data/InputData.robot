@@ -12,7 +12,6 @@ ${DEVICE_NAME}          emulator-5554
 ${APP_PACKAGE}          chat21.android.demo
 ${APP_ACTIVITY}         chat21.android.demo.SplashActivity
 ${AUTOMATION_NAME}      Uiautomator2
-s
 
 #*** Android 10 variables ***
 ${ANDROID10_CONTINUE_BUTTON}    id=com.android.permissioncontroller:id/continue_button

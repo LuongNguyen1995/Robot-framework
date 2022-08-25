@@ -23,4 +23,4 @@ Verify login Successful
     [Documentation]    Login with Valid Data
     [Tags]    Login valid
     LoginApp.Input data login    ${LOGIN}[email]    ${LOGIN}[password]
-    LoginApp.Verify login is successful
+    LoginApp.Verify login is successful    

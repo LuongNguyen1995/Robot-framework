@@ -1,5 +1,4 @@
 *** Settings ***
-Library    DataDriver    ../../Data/Excel/Login_Register.xlxs    sheet_name=Login_Invalid
 Resource    ./PO/LandingPage.robot
 Resource    ./PO/HomePage.robot
 
@@ -23,8 +22,9 @@ Verify login is successful
 Input multiple data invalid
     LandingPage.Input Multiple Email Invalid
 
-Verify Element Should Contain 
-    LandingPage.Page Contains Element Error
+Verify Element Should Contain
+    [Arguments]    ${error_msg}
+    LandingPage.Page Contains Element Error       ${error_msg}
 
 Test Multiples Login Scenarios
     [Arguments]    ${email}    ${password}   
